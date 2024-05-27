@@ -1,0 +1,9 @@
+---
+- hosts: all
+  become: yes
+  vars:
+    phpmyadmin_blowfish_secret: 'your_secret_key_here'
+
+  roles:
+    - role: database
+    - role: phpmyadmin

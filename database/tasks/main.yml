@@ -1,0 +1,27 @@
+---
+- name: Install MariaDB
+  apt:
+    name: mariadb-server
+    state: present
+  become: yes
+
+- name: Start MariaDB service
+  service:
+    name: mariadb
+    state: started
+    enabled: yes
+  become: yes
+
+- name: Create database
+  mysql_db:
+    name: test
+    state: present
+  become: yes
+
+- name: Create database user
+  mysql_user:
+    name: dbuser
+    password: password
+    priv: 'test.*:ALL'
+    state: present
+  become: yes

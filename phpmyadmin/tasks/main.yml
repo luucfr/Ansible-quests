@@ -1,0 +1,12 @@
+---
+- name: Install PHPMyAdmin
+  apt:
+    name: phpmyadmin
+    state: present
+  become: yes
+
+- name: Configure PHPMyAdmin to connect to MariaDB
+  template:
+    src: templates/config.inc.php.j2
+    dest: /etc/phpmyadmin/config.inc.php
+  become: yes

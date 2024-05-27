@@ -1,0 +1,11 @@
+<?php
+$cfg['blowfish_secret'] = '{{ phpmyadmin_blowfish_secret }}';
+$i = 0;
+$i++;
+$cfg['Servers'][$i]['auth_type'] = 'cookie';
+$cfg['Servers'][$i]['host'] = 'localhost';
+$cfg['Servers'][$i]['user'] = 'dbuser';
+$cfg['Servers'][$i]['password'] = 'password';
+$cfg['Servers'][$i]['extension'] = 'mysqli';
+$cfg['Servers'][$i]['compress'] = false;
+$cfg['Servers'][$i]['AllowNoPassword'] = false;
